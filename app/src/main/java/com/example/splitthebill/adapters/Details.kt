@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.splitthebill.R
 import com.example.splitthebill.model.Integrantes
+import kotlin.math.roundToInt
 
 class Details (
     context: Context,
@@ -56,10 +57,10 @@ class Details (
             var diferenca: Double = media - member.valuePay
 
             if(diferenca < 0) {
-                theReceiver.text = "Terá que receber: " + (diferenca * -1).toString()
+                theReceiver.text = "Terá que receber: R$ " + ("%.2f".format((diferenca * -1)))
                 thePay.visibility = View.GONE;
             }else if(diferenca > 0){
-                thePay.text = "Terá que pagar: " + diferenca.toString()
+                thePay.text = "Terá que pagar: R$ " + ("%.2f".format(diferenca))
                 theReceiver.visibility = View.GONE
             }else{
                 theReceiver.text = "Membro não está devendo nada!";

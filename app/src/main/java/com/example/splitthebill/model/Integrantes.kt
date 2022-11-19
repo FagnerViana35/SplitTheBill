@@ -1,5 +1,6 @@
 package com.example.splitthebill.model
 
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -8,6 +9,6 @@ class Integrantes (
 
     val id: Number,
     var name: String,
-    var valuepay: Double,
+    var valuePay: Double,
     var listBuy: String,
 ) : Parcelable

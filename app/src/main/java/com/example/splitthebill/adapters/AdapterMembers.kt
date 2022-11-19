@@ -13,34 +13,34 @@ import com.example.splitthebill.model.Integrantes
 class AdapterMembers (
     context: Context,
     private val integrantesList: MutableList<Integrantes>
-    ) : ArrayAdapter<Integrantes>(context, R.layout.tile_contact, integrantesList) {
-    private data class TileContactHolder(val nameTv: TextView, val emailTv: TextView)
+    ) : ArrayAdapter<Integrantes>(context, R.layout.tile_member, integrantesList) {
+    private data class TileContactHolder(val name: TextView, val valuePay: TextView)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val contact = integrantesList[position]
-        var contactTileView = convertView
-        if (contactTileView == null) {
+        val member = integrantesList[position]
+        var memberTileView = convertView
+        if (memberTileView == null) {
 
-            contactTileView =
+            memberTileView =
                 (context.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(
-                    R.layout.tile_contact,
+                    R.layout.tile_member,
                     parent,
                     false
                 )
 
             val tileContactHolder = TileContactHolder(
-                contactTileView.findViewById(R.id.nameTv),
-                contactTileView.findViewById(R.id.emailTv),
+                memberTileView.findViewById(R.id.name),
+                memberTileView.findViewById(R.id.valuePay),
             )
-            contactTileView.tag = tileContactHolder
+            memberTileView.tag = tileContactHolder
         }
 
-        with(contactTileView?.tag as TileContactHolder) {
-            nameTv.text = contact.name
-            emailTv.text = contact.email
+        with(memberTileView?.tag as TileContactHolder) {
+            name.text = member.name
+            valuePay.text = member.valuePay.toString()
         }
 
-        return contactTileView
+        return memberTileView
     }
 }
 

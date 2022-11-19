@@ -3,11 +3,13 @@ package com.example.splitthebill.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.splitthebill.R
 import com.example.splitthebill.databinding.ActivityMainBinding
 import com.example.splitthebill.databinding.ActivityMemberBinding
 import com.example.splitthebill.model.Constants
 import com.example.splitthebill.model.Constants.EXTRA_MEMBER
+import com.example.splitthebill.model.Constants.VIEW_MEMBER
 import com.example.splitthebill.model.Integrantes
 import java.util.*
 
@@ -31,6 +33,18 @@ class MemberActivity : AppCompatActivity() {
                 }
             }
         }
+
+        val viewContact = intent.getBooleanExtra(VIEW_MEMBER, false)
+        if (viewContact) {
+            mab.nameEt.isEnabled = false
+            mab.valuePayEt .isEnabled = false
+            mab.listBuyEt .isEnabled = false
+
+            mab.nameEt.visibility = View.GONE
+            mab.valuePayEt.visibility = View.GONE
+            mab.saveMemberBt.visibility = View.GONE
+        }
+
         mab.saveMemberBt.setOnClickListener {
             val member = Integrantes(
                 id = receivedMember?.id?:Random(System.currentTimeMillis()).nextInt(),

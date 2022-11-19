@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/nomeDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nome"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/thePay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/value_the_pay"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/theReceiver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/value_receiver"
+        android:textSize="18sp"
+        />
+
+</LinearLayout>

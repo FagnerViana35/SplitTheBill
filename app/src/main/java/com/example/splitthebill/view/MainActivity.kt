@@ -55,6 +55,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        registerForContextMenu(amb.membersLV)
+
+        amb.membersLV.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, position, _ ->
+                val member = listMembers[position]
+                val memberIntent = Intent(this@MainActivity, MemberActivity::class.java)
+                memberIntent.putExtra(EXTRA_MEMBER, member)
+                memberIntent.putExtra(VIEW_MEMBER, true)
+                startActivity(memberIntent)
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -92,6 +103,12 @@ class MainActivity : AppCompatActivity() {
                 memberIntent.putExtra(EXTRA_MEMBER, member)
                 memberIntent.putExtra(VIEW_MEMBER, false)
                 marl.launch(memberIntent)
+                true
+            }
+            R.id.removeMember -> {
+                listMembers.removeAt(position)
+                adapterMembers.notifyDataSetChanged()
+
                 true
             }
             else -> { false }

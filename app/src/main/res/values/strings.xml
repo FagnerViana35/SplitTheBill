@@ -7,4 +7,6 @@
     <string name="value_pay">"Valor Pago: "</string>
     <string name="list_Buy">Lista de Compras</string>
     <string name="save">Salvar</string>
+    <string name="remover_membro">Remover membro</string>
+    <string name="editar_membro">Editar membro</string>
 </resources>

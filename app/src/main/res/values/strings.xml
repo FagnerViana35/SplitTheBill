@@ -2,7 +2,7 @@
     <string name="app_name">SplitTheBill</string>
     <string name="name">Name:</string>
     <string name="valor_pago">Valor Pago:</string>
-    <string name="adicionar_integrantes">Adicionar Integrantes</string>
+    <string name="adicionar_membros">Adicionar Integrantes</string>
     <string name="nameEt">"Nome: "</string>
     <string name="value_pay">"Valor Pago: "</string>
     <string name="list_Buy">Lista de Compras</string>
@@ -12,4 +12,5 @@
     <string name="value_the_pay">Pagar: </string>
     <string name="value_receiver">Receber:</string>
     <string name="nome">Nome: </string>
+    <string name="detalhes_membros">Detalhes</string>
 </resources>

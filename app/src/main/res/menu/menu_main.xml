@@ -4,6 +4,12 @@
     <item
         android:id="@+id/addMember"
         android:icon="@drawable/ic_acc"
-        android:title="@string/adicionar_integrantes"
+        android:title="@string/adicionar_membros"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/DetailsMember"
+        android:icon="@drawable/ic_acc"
+        android:title="@string/detalhes_membros"
         app:showAsAction="ifRoom" />
 </menu>

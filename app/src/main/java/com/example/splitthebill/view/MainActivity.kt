@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
     private val listMembers : MutableList<Integrantes> = mutableListOf()
+
+    private val listMembersDetails : ArrayList<Integrantes> = listMembers as ArrayList<Integrantes>
+
     private lateinit var adapterMembers : AdapterMembers;
 
     private lateinit var marl: ActivityResultLauncher<Intent>
@@ -79,6 +82,12 @@ class MainActivity : AppCompatActivity() {
             R.id.addMember -> {
                 val intentMemberActivity = Intent(this,MemberActivity::class.java)
                 marl.launch(intentMemberActivity)
+                true
+            }
+            R.id.DetailsMember -> {
+                val intentMemberDetailsActivity = Intent(this,DetailsActivity::class.java)
+                intentMemberDetailsActivity.putParcelableArrayListExtra("Details", listMembersDetails)
+                startActivity(intentMemberDetailsActivity)
                 true
             }
             else -> {false}
